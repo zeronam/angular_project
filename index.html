@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mobile Store</title>
+    
+    <base href="/mobile_store/">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!-- Font Awesome -->    
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,500,700' rel='stylesheet' type='text/css'>
+    <!-- <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css" /> -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="js/angularjs_animate.js"></script>
+    <script src="js/dirPagination.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jssor.slider.min.js"></script>
+    <script src="js/wow.js"></script>
+    <script src="js/app.js"></script>
+    
+  </head>
+  <body ng-controller="main_controller" ng-init="active='home'">
+    <div class="wrapper">
+    <div class="sidebar">
+      <div class="sharebar" ng-click="toggle = !toggle" ng-class="{'active' : toggle}">
+        <a href="" class="show_sidebar"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+        <ul>
+          <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+      
+    </div>
+  <!-- HEADER TOP -->
+    <div ng-include="'widgets/header.html'"></div>
+       <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1920px; height: 600px; overflow: hidden; visibility: hidden;">
+        <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
+            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+            <div style="position:absolute;display:block;background:url('images/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+        </div>
+        <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1920px; height: 600px; overflow: hidden;">
+            <div data-p="112.50" style="display: none;">
+                <img data-u="image" src="images/banner1.png" />
+            </div>
+            <div data-p="112.50" style="display: none;">
+                <img data-u="image" src="images/banner2.png" />
+            </div>
+            <div data-p="112.50" style="display: none;">
+                <img data-u="image" src="images/banner3.png" />
+            </div>
+         </div>
+        <div data-u="navigator" class="jssorb05" style="bottom:16px;right:16px;" data-autocenter="1">
+            <div data-u="prototype" style="width:18px;height:18px;"></div>
+        </div>
+        <!-- <span data-u="arrowright" class="rightarr bgimg" style="width:35px;height:60px"data-autocenter="2"></span>
+        <span data-u="arrowleft" class="leftarr bgimg" data-autocenter="2"></span> -->
+    </div>
+
+    <div class="container">
+      <div class="productact row">
+        <div class="menu_select col-md-6 col-sm-6 col-xs-12" ng-controller="TabController as tab">
+                      <ul>
+                          <li ng-class="{active:tab.isSet(1)}"><a href="home" class="all" ng-click="tab.setTab(1)">All</a></li>
+                          <li ng-class="{active:tab.isSet(2)}"><a href="mobile" class="mobile" ng-click="tab.setTab(2)">Mobile</a></li>
+                          <li ng-class="{active:tab.isSet(3)}"><a href="laptop" class="laptop" ng-click="tab.setTab(3)">Laptop</a></li>                    
+                      </ul>
+                  </div>
+
+
+            <div class="col-md-6 col-sm-6 col-xs-12 search_content">
+              <div class="input-group">  
+                <input type="text" name="search" value="" placeholder="Search" class="form-control input-lg" ng-model="search_module">
+                  <span class="input-group-btn">
+                <button type="button" class="btn btn-default btn-lg header-search-btn">Search</button>
+                  </span>
+              </div>
+            </div>
+          </div>
+      <div ng-view></div>
+      <div class="banner">
+      <div class="box-content">
+        <div class="row">
+          <div class="ads col-sm-4 col-xs-12 col-md-4">
+                <div class="offer-img">
+                    <a href="#"><img src="images/ads1.jpg" alt="sub-banner-03" class="img-responsive"></a></div>
+                </div>
+                <div class="ads col-sm-4 col-xs-12 col-md-4">
+                    <div class="offer-img">
+                    <a href="#"><img src="images/ads2.jpg" alt="sub-banner-04" class="img-responsive"></a></div>
+                    </div>
+                <div class="ads col-sm-4 col-xs-12 col-md-4">
+                    <div class="offer-img">
+                    <a href="#"><img src="images/ads3.jpg" alt="sub-banner-04" class="img-responsive"></a></div>
+                </div>
+                </div>
+              </div>
+          </div>        
+        </div>
+        <div ng-include="'widgets/footer.html'"></div>
+</body>
+<script>
+ new WOW().init();
+</script>
+<script>
+    jssor_1_slider_init = function() {
+        
+        var jssor_1_SlideshowTransitions = [
+          {$Duration:1200,$Opacity:2}
+        ];
+        
+        var jssor_1_options = {
+          $AutoPlay: true,
+          $SlideshowOptions: {
+            $Class: $JssorSlideshowRunner$,
+            $Transitions: jssor_1_SlideshowTransitions,
+            $TransitionsOrder: 1
+          },
+          $ArrowNavigatorOptions: {
+            $Class: $JssorArrowNavigator$
+          },
+          $BulletNavigatorOptions: {
+            $Class: $JssorBulletNavigator$
+          }
+        };
+        
+        var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+        
+        //responsive code begin
+        //you can remove responsive code if you don't want the slider scales while window resizing
+        function ScaleSlider() {
+            var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+            if (refSize) {
+                refSize = Math.min(refSize, 1920);
+                jssor_1_slider.$ScaleWidth(refSize);
+            }
+            else {
+                window.setTimeout(ScaleSlider, 30);
+            }
+        }
+        ScaleSlider();
+        $Jssor$.$AddEvent(window, "load", ScaleSlider);
+        $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+        $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+        //responsive code end
+    };
+</script>
+<script>jssor_1_slider_init();</script>
+
+
