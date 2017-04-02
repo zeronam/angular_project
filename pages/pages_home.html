@@ -1,0 +1,73 @@
+        <div id="content">               
+            <div class="TTProduct-Tab TT-product-carousel products-list">
+                <div class="box-heading"><h3>MOBILE</h3></div>
+                    <div class="tabcontent row">
+                        <div class="product-layouts col-xs-12 col-md-3 col-sm-3" ng-repeat="sp in mobile | filter: search_module">
+                            <div class="product-thumb transition">
+                                <div class="image" >
+                            <a  href="detail/{{sp.ma}}"><img src="images/san_pham/{{sp.hinh_san_pham}}"></a>
+                                </div>
+                          <div class="thumb-description">
+                          <div class="caption">
+                            <h4><a href="#" ng-bind="sp.ten_san_pham"></a></h4>                        
+                                <div class="price"> 
+                                    <span ng-bind="(sp.don_gia | number)"></span> VNĐ  
+                                </div>
+                                <div class="rating">
+                                    <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span>
+                                    <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span>
+                                    <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span>
+                                    <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span>
+                                    <span class="fa fa-stack"><i class="fa fa-star off fa-stack-2x"></i></span>
+                                </div>                        
+                          </div>
+                          <div class="button-group">
+                            <button class="btn-cart" type="button" ng-click="datmua()"><i class="fa fa-shopping-cart"></i>VIEW MORE</button>                       
+                      </div>
+                      </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+                <!-- END MOBILE -->
+                 <div class="TTProduct-Tab TT-product-carousel products-list">
+                <div class="box-heading"><h3>LAPTOP</h3></div>
+                <div class="tabcontent row">
+                    <div class="product-layouts col-xs-12 col-sm-3 col-md-3" dir-paginate="sp in laptop | filter: search_module | itemsPerPage: 8" ng-animate>
+                        <div class="product-thumb transition">
+                            <div class="image img-hover wow fadeIn" data-wow-duration="2s">
+                        <a href="detail/{{sp.ma}}"><img class="img-responsive img-rounded" src="images/san_pham/{{sp.hinh_san_pham}}"></a>
+                            </div>
+                      <div class="thumb-description">
+                      <div class="caption">
+                        <h4><a href="#" ng-bind="sp.ten_san_pham"></a></h4>                        
+                            <div class="price">
+                                <span ng-bind="(sp.don_gia | number)"></span> VNĐ  
+                            </div>
+                            <div class="rating">
+                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span>
+                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span>
+                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span>
+                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span>
+                                <span class="fa fa-stack"><i class="fa fa-star off fa-stack-2x"></i></span>
+                            </div>                        
+                      </div>
+                      <div class="button-group">
+                        <button class="btn-cart" type="button" ng-click="datmua()"><i class="fa fa-shopping-cart"></i>VIEW MORE</button>                       
+                      </div>
+                      </div>
+                      </div>
+                    </div>
+                    <div style="clear:both"></div>
+                    <div ng-controller="PaginationController" class="other-controller">
+                        <div class="text-center">
+                        <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="./dirPagination.tpl.html"></dir-pagination-controls>
+                        </div>
+                      </div>
+                </div>
+                </div>
+            
+        </div>
+
+ 
+
