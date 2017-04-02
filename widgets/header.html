@@ -1,0 +1,32 @@
+    <div class="mainnav navbar navbar-inverse navbar-static-top" ng-controller="TabController as tab">
+      <div class="container">
+      <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar3" aria-expanded="true">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+          <div class="navbar-left">
+            <a href="home" class="navbar-brand"><img src="images/logo.png"></a>
+          </div>
+        </div>  
+        <div class="collapse navbar-collapse navbar3">
+          <ul class="nav navbar-nav navbar-right topnav">
+          <li ng-class="{active:tab.isSet(1)}"><a class="categlory home active" href="home" ng-click="tab.setTab(1)">Home</a>
+              
+          </li>
+          <li class="dropdown" ng-class="{active:tab.isSet(2)}"><a href="products" ng-click="tab.setTab(2)" class="categlory products dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Mobile</a></li>
+                      <li><a href="#">Laptop</a></li>
+                    </ul> 
+          </li>
+          <li ng-class="{active:tab.isSet(3)}"><a class="categlory contact" href="contact" ng-click="tab.setTab(3)">Contact</a></li>
+          <li ng-class="{active:tab.isSet(4)}"><a class="categlory services" href="services" ng-click="tab.setTab(4)">Services</a></li>           
+          </li>
+        </ul>
+        </div>
+      </div>
+    </div>
+<!-- END HEADER TOP-->
