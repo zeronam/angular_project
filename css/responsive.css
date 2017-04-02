@@ -1,0 +1,23 @@
+/*MOBILE*/
+@media screen and (min-width: 320px) and (max-width: 767px) {
+	.mainnav .topnav li.active .categlory, .mainnav .topnav li:hover .categlory{border-radius:0;}
+	.mainnav .navbar-brand{padding:0 15px;}
+	.ads .offer-img img{margin:0 auto;}
+	.menu_select {margin-bottom:25px;}
+	.search_content{padding:0;}
+	.footer-bottom p {text-align:center;float:none;}
+	.footer-bottom img {display:block;margin:5px auto;}
+	#footer-bottom{text-align: center;margin-top:10px;float:none;}
+	.sidebar{display:none;}
+}
+
+/*TABLET*/
+@media screen and (min-width: 769px) and (max-width: 992px) {
+
+}
+
+/*DESKTOP*/
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+
+}
+
